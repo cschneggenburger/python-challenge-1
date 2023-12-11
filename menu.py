@@ -89,7 +89,6 @@ while place_order:
             menu_category_name = menu_items[int(menu_category)]
             # Print out the menu category name they selected
             print(f"You selected {menu_category_name}")
-
             # Print out the menu options from the menu_category_name
             print(f"What {menu_category_name} item would you like to order? ")
             i = 1
@@ -141,7 +140,6 @@ while place_order:
                             "Price": menu_items[menu_item_number]['Price'],
                             "Quantity": quantity,
                         })
-                        #order_list.append(order_dictionary)
                     else:
                         quantity = 1
                         order_list.append({
@@ -149,9 +147,10 @@ while place_order:
                             "Price": menu_items[menu_item_number]['Price'],
                             "Quantity": quantity,
                         })
-                        #order_list.append(order_dictionary)
+                # Print error if item # doesn't exist
                 else:
                     print(f"That was not a valid item #.")
+            #Print error if menu selection isn't a number
             else:
                 print(f"{menu_item_number} is not a number.")
         else:
@@ -162,7 +161,7 @@ while place_order:
         print("You didn't select a valid menu number.")
     
     while True:
-        keep_ordering = input("Would you like to order something else? (Y)es or (N)o ")
+        keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
 
         match keep_ordering.lower():
             case "y":
@@ -195,8 +194,10 @@ for item in order_list:
         price = item["Price"]
         quantity = item["Quantity"]
         num_item_spaces = 25 - len(item_name)
+        num_price_spaces = 5 - len(str(price))
         item_spaces = " " * num_item_spaces
-        print(f"{item_name}{item_spaces} | ${price}  | {quantity}")
+        price_spaces = " " * num_price_spaces
+        print(f"{item_name}{item_spaces} | ${price}{price_spaces} | {quantity}")
     
 
 
