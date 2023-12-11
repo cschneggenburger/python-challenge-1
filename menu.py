@@ -194,8 +194,10 @@ for item in order_list:
         item_name = item["Item name"]
         price = item["Price"]
         quantity = item["Quantity"]
-        num_item_spaces = 25 - len(item_name)#Is 25 because of tail space
-        num_price_spaces = 5 - len(str(price))#Is 5 because of $ and lead/tail spaces 
+        num_item_spaces = 25 - len(item_name)
+        #Above is 25 because of tailing space in print statement
+        num_price_spaces = 5 - len(str(price))
+        #Above is 5 because of $ and lead/tail spaces and str() to use len function
         item_spaces = " " * num_item_spaces
         price_spaces = " " * num_price_spaces
         print(f"{item_name}{item_spaces} | ${price}{price_spaces} | {quantity}")
