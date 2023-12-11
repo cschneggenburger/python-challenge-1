@@ -208,4 +208,5 @@ for item in order_list:
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 total_cost = sum([item_name["Price"] * item_name["Quantity"] for item_name in order_list])
-print(f"\n${total_cost} is your total cost.")
+print(f"\n${total_cost:.2f} is your total cost.")
+#formatted total_cost to have 2 decimal places for edge cases
