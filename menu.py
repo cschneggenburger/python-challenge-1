@@ -129,7 +129,8 @@ while place_order:
                     item_name = menu_items[menu_item_number]['Item name']
                     
                     # Ask the customer for the quantity of the menu item
-                    quantity = input(f"How many {item_name}'s would you like? System will default to 1 if your input is invalid. ")
+                    quantity = input(f"How many {item_name}'s would you like? "
+                                     + f"System will default to 1 if your input is invalid. ")
 
                     # Check if the quantity is a number, default to 1 if not
                     if quantity.isdigit():
@@ -193,8 +194,8 @@ for item in order_list:
         item_name = item["Item name"]
         price = item["Price"]
         quantity = item["Quantity"]
-        num_item_spaces = 25 - len(item_name)
-        num_price_spaces = 5 - len(str(price))
+        num_item_spaces = 25 - len(item_name)#Is 25 because of tail space
+        num_price_spaces = 5 - len(str(price))#Is 5 because of $ and lead/tail spaces 
         item_spaces = " " * num_item_spaces
         price_spaces = " " * num_price_spaces
         print(f"{item_name}{item_spaces} | ${price}{price_spaces} | {quantity}")
