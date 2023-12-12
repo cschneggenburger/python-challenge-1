@@ -185,21 +185,18 @@ print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
-# 7. Store the dictionary items as variables
-# 8. Calculate the number of spaces for formatted printing
-# 9. Create space strings
-# 10. Print the item name, price, and quantity
-# Steps 6-10 are in the code block below
 for item in order_list:
+        # 7. Store the dictionary items as variables
         item_name = item["Item name"]
         price = item["Price"]
         quantity = item["Quantity"]
-        num_item_spaces = 25 - len(item_name)
-        #Above is 25 because of tailing space in print statement
-        num_price_spaces = 5 - len(str(price))
-        #Above is 5 because of $ and lead/tail spaces and str() to use len function
+        # 8. Calculate the number of spaces for formatted printing
+        num_item_spaces = 25 - len(item_name)#25 because of tailing space in print statement
+        num_price_spaces = 5 - len(str(price))#5 because of $ and lead/tail spaces and str() to use len function
+        # 9. Create space strings
         item_spaces = " " * num_item_spaces
         price_spaces = " " * num_price_spaces
+        # 10. Print the item name, price, and quantity
         print(f"{item_name}{item_spaces} | ${price}{price_spaces} | {quantity}")
     
 
@@ -208,5 +205,4 @@ for item in order_list:
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 total_cost = sum([item_name["Price"] * item_name["Quantity"] for item_name in order_list])
-print(f"\n${total_cost:.2f} is your total cost.")
-#formatted total_cost to have 2 decimal places for edge cases
+print(f"\n${total_cost:.2f} is your total cost.")#formatted total_cost to have 2 decimal places for edge cases
